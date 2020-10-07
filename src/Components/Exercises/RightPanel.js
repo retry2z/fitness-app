@@ -9,7 +9,7 @@ import { Hidden } from '@material-ui/core';
 const RightPanel = () => {
     const context = React.useContext(UserContext);
 
-    const { t } = useTranslation('home');
+    const { t } = useTranslation();
 
     const {
         title = t('welcome'),

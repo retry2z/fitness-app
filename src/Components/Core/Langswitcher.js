@@ -3,7 +3,6 @@ import React from "react";
 import { supportedLangs } from '../../Locale/langOptions';
 
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import Fab from '@material-ui/core/Fab';
@@ -20,8 +19,12 @@ const LangSwitcher = ({ short = false }) => {
         setAnchorEl(event.currentTarget);
     };
 
-
     const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const handleSelect = (langCode) => {
+        context.langSwitcher(langCode);
         setAnchorEl(null);
     };
 
@@ -43,7 +46,7 @@ const LangSwitcher = ({ short = false }) => {
             >
                 {
                     Object.keys(supportedLangs).map(langCode => (
-                        <MenuItem key={langCode} onClick={() => context.langSwitcher(langCode)}>
+                        <MenuItem key={langCode} onClick={() => handleSelect(langCode)}>
                             <Typography variant="body1">
                                 {short ? (langCode).toLocaleUpperCase() : supportedLangs[langCode]}
                             </Typography>
