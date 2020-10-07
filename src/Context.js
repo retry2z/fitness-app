@@ -10,7 +10,6 @@ export const UserContext = React.createContext({
     isDark: false,
     themeSwitcher: () => { },
 
-    language: '',
     langSwitcher: () => { },
 
     data: [],
@@ -38,7 +37,6 @@ const ContextContainer = (props) => {
     const [editMode, setEditMode] = React.useState(false);
     const [exercises, setExercises] = React.useState(dataExercises);
     const [isDark, setDark] = React.useState(true);
-    const [language, setLanguage] = React.useState('en');
 
     const themeSwitcher = () => {
         setDark(!isDark);
@@ -111,7 +109,6 @@ const ContextContainer = (props) => {
                 isDark,
                 themeSwitcher,
 
-                language,
                 langSwitcher,
 
                 data,
