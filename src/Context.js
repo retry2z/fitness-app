@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { I18nextProvider } from 'react-i18next';
-import { lang } from './Config/i18n';
 import i18n from './Config/i18n';
 
 import { exercises as dataExercises, muscles as categories } from './data/store';
