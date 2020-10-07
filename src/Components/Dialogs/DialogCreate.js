@@ -20,6 +20,9 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up("sm")]: {
             width: 500,
         },
+    },
+    userActions: {
+        marginRight: 16,
     }
 }));
 
@@ -45,6 +48,7 @@ const Create = () => {
     return (
         <>
             <Fab
+                className={classes.userActions}
                 color="default"
                 onClick={handleClickOpen}
                 size="small"

@@ -1,8 +1,6 @@
 import React from 'react';
 import { UserContext } from '../Context';
 
-import '../Config/i18n';
-
 import { Header, Main, Footer } from './Layouts';
 
 import CssBaseline from '@material-ui/core/CssBaseline';

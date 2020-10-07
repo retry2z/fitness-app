@@ -9,6 +9,7 @@ import Create from '../Dialogs/DialogCreate';
 import Grid from '@material-ui/core/Grid';
 import Fab from '@material-ui/core/Fab';
 import Brightness5 from '@material-ui/icons/Brightness5';
+import LangSwitcher from '../Core/Langswitcher';
 
 const useStyle = makeStyles({
     root: {
@@ -48,7 +49,10 @@ const Header = () => {
                             <Brightness5 />
                         </Fab>
 
+
                         <Create />
+
+                        <LangSwitcher />
                     </Grid>
 
                 </Grid>

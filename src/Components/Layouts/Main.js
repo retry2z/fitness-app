@@ -24,8 +24,7 @@ const useStyles = makeStyles(theme => ({
         padding: theme.spacing(3),
         overflowY: 'auto',
         [theme.breakpoints.up('sm')]: {
-            marginTop: 5,
-            height: 'calc(100% - 10px)'
+            height: '100%'
         },
         [theme.breakpoints.down('xs')]: {
             height: '100%'
@@ -41,13 +40,13 @@ const Main = () => {
             <Grid item xs={false} sm={1} />
 
             <Grid item className={classes.item} xs={12} sm={5}>
-                <Paper className={classes.paper}>
+                <Paper className={classes.paper} square>
                     <LeftPanel />
                 </Paper>
             </Grid>
 
             <Grid item className={classes.item} xs={12} sm={5}>
-                <Paper className={classes.paper}>
+                <Paper className={classes.paper} square>
                     <RightPanel />
                 </Paper>
             </Grid>

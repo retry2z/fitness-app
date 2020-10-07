@@ -1,10 +1,17 @@
 import React from 'react';
 
+import { I18nextProvider } from 'react-i18next';
+import { lang } from './Config/i18n';
+import i18n from './Config/i18n';
+
 import { exercises as dataExercises, muscles as categories } from './data/store';
 
 export const UserContext = React.createContext({
-    isDark:false,
+    isDark: false,
     themeSwitcher: () => { },
+
+    language: '',
+    langSwitcher: () => { },
 
     data: [],
     exercises: [],
@@ -30,11 +37,16 @@ const ContextContainer = (props) => {
     const [currentCategory, setCurrentCategory] = React.useState(null);
     const [editMode, setEditMode] = React.useState(false);
     const [exercises, setExercises] = React.useState(dataExercises);
-    const [isDark, setDark] = React.useState(false);
+    const [isDark, setDark] = React.useState(true);
+    const [language, setLanguage] = React.useState('en');
 
     const themeSwitcher = () => {
         setDark(!isDark);
     };
+
+    const langSwitcher = (value) => {
+        i18n.changeLanguage(value);
+    }
 
     const initialCategories = categories.reduce((acc, category) => {
         acc[category] = []
@@ -99,6 +111,9 @@ const ContextContainer = (props) => {
                 isDark,
                 themeSwitcher,
 
+                language,
+                langSwitcher,
+
                 data,
                 exercises,
                 categories,
@@ -118,7 +133,9 @@ const ContextContainer = (props) => {
                 removeExercise,
             }}>
 
-            { props.children}
+            <I18nextProvider i18n={i18n} >
+                {props.children}
+            </I18nextProvider>
 
         </UserContext.Provider >
     )
