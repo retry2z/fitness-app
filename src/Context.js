@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { I18nextProvider } from 'react-i18next';
-import i18n from './Config/i18n';
+import i18n from './config/i18n';
+import { pushNotification } from './utils/notifications';
 
 import { exercises as dataExercises, muscles as categories } from './data/store';
 
@@ -10,6 +11,8 @@ export const UserContext = React.createContext({
     themeSwitcher: () => { },
 
     langSwitcher: () => { },
+
+    pushNotification: () => { },
 
     data: [],
     exercises: [],
@@ -81,6 +84,12 @@ const ContextContainer = (props) => {
             ...exercises,
             exercise
         ])
+
+        const data = {
+            body: 'Exercise has been created.',
+            icon: 'https://png.pngtree.com/png-clipart/20190705/original/pngtree-vector-notification-icon-png-image_4275787.jpg',
+        }
+        pushNotification('Successful', data);
     };
 
     const editExercise = (exercise) => {
@@ -109,6 +118,8 @@ const ContextContainer = (props) => {
                 themeSwitcher,
 
                 langSwitcher,
+
+                pushNotification,
 
                 data,
                 exercises,

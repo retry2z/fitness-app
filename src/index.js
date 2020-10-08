@@ -4,6 +4,10 @@ import App from './Components/App';
 import ContextContainer from './Context';
 import * as serviceWorker from './serviceWorker';
 
+import { initializationNotification } from './utils/notifications';
+
+initializationNotification();
+
 ReactDOM.render(
   <React.StrictMode>
     <ContextContainer>

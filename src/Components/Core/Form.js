@@ -52,7 +52,6 @@ const Form = ({ onChange, onSubmit, edit = false }) => {
             id: form.id || form.title.toLowerCase().replace(/ /g, '-')
         });
 
-        console.log(form);
         !!onSubmit && onSubmit(form);
     };
 

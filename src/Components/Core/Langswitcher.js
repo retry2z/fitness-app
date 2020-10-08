@@ -1,6 +1,6 @@
 import React from "react";
 
-import { supportedLangs } from '../../Locale/langOptions';
+import { supportedLangs } from '../../locale/langOptions';
 
 import Typography from '@material-ui/core/Typography';
 import MenuItem from '@material-ui/core/MenuItem';
